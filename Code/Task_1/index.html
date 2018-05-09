@@ -83,7 +83,7 @@ swal({
   text: 'Welcome to Task 1',
   confirmButtonText: 'I\'m ready!'
 }).then((result) => {
-  // window.navigator.vibrate([50]);
+  if(navigator.vibrate){ navigator.vibrate([50]); }
 })
 
 </script>

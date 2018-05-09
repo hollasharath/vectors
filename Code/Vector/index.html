@@ -87,7 +87,7 @@ d3.select(window).on("contextmenu", function(){
 //   button.text("Click to continue!");
 //
 //   button.on("click", function(){
-//     // window.navigator.vibrate([50]);
+//     // if(navigator.vibrate){ navigator.vibrate([50]); };
 //     // document.getElementById('beep').volume = 0;
 //     // document.getElementById('beep').play();
 //     shadow_div.remove();
@@ -113,7 +113,7 @@ swal({
   cancelButtonText: '<a onclick=intro()><i class="fa fa-question-circle" aria-hidden="true"></i> Intro</a>',
   // footer: '<i class="fa fa-thumbs-up"></i> Great!'
 }).then((result) => {
-  // window.navigator.vibrate([50]);
+  if(navigator.vibrate){ navigator.vibrate([50]); };
 })
 
 function intro(){

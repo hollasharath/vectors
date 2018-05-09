@@ -1,6 +1,6 @@
 createVector.prototype.addVectors = function(){
   var object = new Object();
-  // window.navigator.vibrate([50]);
+  if(navigator.vibrate){ navigator.vibrate([50]); }
 
   object.resultant = this.create_Resultant();
   object.vector_2 = this.create_Vector_2(object.resultant);

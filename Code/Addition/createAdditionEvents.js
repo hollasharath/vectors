@@ -158,7 +158,7 @@ var create_Vector_1_Events = function(){
 
   angle_control_line_drag.on("start", function(d){
     if(d3.event.sourceEvent.type == "touchstart"){
-      // window.navigator.vibrate([25]);
+      // if(navigator.vibrate){ navigator.vibrate([25]); }
       d3.select(this).attr("class", "visible");
       // d.circle.styles({ "display": null, "fill-opacity": 0.3 });
     }
@@ -184,7 +184,7 @@ var create_Vector_1_Events = function(){
 
   radius_control_circle_drag.on("start", function(d){
     if(d3.event.sourceEvent.type == "touchstart"){
-      // window.navigator.vibrate([25]);
+      // if(navigator.vibrate){ navigator.vibrate([25]); }
       d3.select(this).attr("class", "visible");
       // d.circle.styles({ "display": null, "fill-opacity": 0.3 });
       d.temp_pos = {};
@@ -226,7 +226,7 @@ var create_Vector_2_Events = function(){
 
   angle_control_line_drag.on("start", function(d){
     if(d3.event.sourceEvent.type == "touchstart"){
-      // window.navigator.vibrate([25]);
+      // if(navigator.vibrate){ navigator.vibrate([25]); }
       d3.select(this).attr("class", "visible");
       // d.circle.styles({ "display": null, "fill-opacity": 0.3 });
     }
@@ -252,7 +252,7 @@ var create_Vector_2_Events = function(){
 
   radius_control_circle_drag.on("start", function(d){
     if(d3.event.sourceEvent.type == "touchstart"){
-      // window.navigator.vibrate([25]);
+      // if(navigator.vibrate){ navigator.vibrate([25]); }
       d3.select(this).attr("class", "visible");
       // d.circle.styles({ "display": null, "fill-opacity": 0.3 });
       d.temp_pos = {};

@@ -2,7 +2,7 @@
 // Recombine added vector From Componentised form
 
 var done_addition = function(){
-  // window.navigator.vibrate([50]);
+  if(navigator.vibrate){ navigator.vibrate([50]); }
   var object = this, vector_1 = this.vector_1, vector_2 = this.vector_2, resultant = this.resultant;
 
   var temp_list = [ vector_1.container, vector_2.container, resultant.container, object.done_addition_button.image, resultant.movement_circle, resultant.centre_control_circle_1 ];
@@ -36,7 +36,7 @@ var done_addition = function(){
 // Recombine added vector From Componentised form
 
 var recombine_added_vector = function(){
-  // window.navigator.vibrate([50]);
+  // if(navigator.vibrate){ navigator.vibrate([50]); }
 
   setTimeout(() => {
     this.div.styles({ 'display': 'none' });
@@ -170,7 +170,7 @@ var recombine_added_vector = function(){
 // Resolve Added Vector into components
 
 var resolve_added_vector = function(){
-  // window.navigator.vibrate([50]);
+  // if(navigator.vibrate){ navigator.vibrate([50]); }
 
   setTimeout(() => {
     this.div.styles({ 'display': null });
@@ -343,8 +343,8 @@ var resolve_added_vector = function(){
 // Toggle Addition Mode between "triangle" and "parallelogram"
 
 var toggle_addition_mode = function(){
-  // window.navigator.vibrate([50]);
-  
+  // if(navigator.vibrate){ navigator.vibrate([50]); }
+
   var object = this, vector_2 = this.vector_2, vector_1 = this.vector_1;
 
   if(object.addition_mode == "triangle"){

@@ -121,7 +121,7 @@ function createCanvasEvents(){
 
         // document.getElementById('beep').volume = 0;
         // document.getElementById('beep').play();
-        // // window.navigator.vibrate([50]);
+        // // if(navigator.vibrate){ navigator.vibrate([50]); };
         screen_svg.vector_list.push(temp_vector);
 
       }
