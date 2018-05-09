@@ -41,7 +41,7 @@ createVector.prototype.toggleManipulationMode = function(){
 createVector.prototype.resolve_vector = function(){
 
   this.vector_mode = "cartesian";
-  window.navigator.vibrate([50]);
+  // window.navigator.vibrate([50]);
 
   temp_len = parseInt(this.centre_circle.attr("r"));
   this.centre_circle
@@ -97,7 +97,7 @@ createVector.prototype.resolve_vector = function(){
 createVector.prototype.recombine_vector = function(){
 
   this.vector_mode = "polar";
-  window.navigator.vibrate([50]);
+  // window.navigator.vibrate([50]);
 
   this.yComponent_line
     .transition().delay(500).duration(1500)
