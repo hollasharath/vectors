@@ -1,7 +1,7 @@
 /***********************************************************************************/
 
 function createVector(data){
-  window.navigator.vibrate([50]);
+  if(navigator.vibrate){ navigator.vibrate([50]); }
 
   for(var i in data){ this[i] = data[i]; }
 

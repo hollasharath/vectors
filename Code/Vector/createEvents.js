@@ -48,7 +48,7 @@ createVector.prototype.createEvents = function(){
         .styles({ "fill": this.gray_color, "fill-opacity": 0.3, "stroke": "none" })
         .attrs({ cx: d.addition_data.patner.xComponent_coordinate, cy: d.addition_data.patner.yComponent_coordinate, r: d.control_circle_radius })
         .on("touchstart", function(){
-          // window.navigator.vibrate(200);
+          // // window.navigator.vibrate(200);
           d.addVectors();
         })
     })
@@ -112,14 +112,14 @@ createVector.prototype.createEvents = function(){
 
   this.centre_control_circle.on("click", function(d){
     d.manipulationMode = !d.manipulationMode;
-    // window.navigator.vibrate(200);
+    // // window.navigator.vibrate(200);
     d.toggleManipulationMode();
   })
 
   /*************************** Vector recombine circle Events ***************************/
 
   this.vector_recombine_circle.on("touchstart", function(d){
-    // window.navigator.vibrate(200);
+    // // window.navigator.vibrate(200);
     d.recombine_vector();
   })
 
@@ -134,7 +134,7 @@ createVector.prototype.createEvents = function(){
       // document.getElementById('beep').play();
       d.temp_pos.dist = distpoints(0,0, d3.event.x, d3.event.y);
       d.temp_pos.r = d.r;
-      window.navigator.vibrate([25]);
+      // window.navigator.vibrate([25]);
     }
   })
 
@@ -160,7 +160,7 @@ createVector.prototype.createEvents = function(){
     if(d3.event.sourceEvent.type == "touchstart"){
       d3.select(this).attr("class", "visible");
       // document.getElementById('beep').play();
-      window.navigator.vibrate([25]);
+      // window.navigator.vibrate([25]);
     }
   })
 
@@ -187,7 +187,7 @@ createVector.prototype.createEvents = function(){
       // document.getElementById('beep').play();
       d.temp_pos.xComponent_length = d.xComponent_length;
       d.temp_pos.yComponent_length = d.yComponent_length;
-      window.navigator.vibrate([25]);
+      // window.navigator.vibrate([25]);
     }
   })
 
@@ -217,7 +217,7 @@ createVector.prototype.createEvents = function(){
       // document.getElementById('beep').play();
       d.temp_pos.xComponent_length = d.xComponent_length;
       d.temp_pos.yComponent_length = d.yComponent_length;
-      window.navigator.vibrate([25]);
+      // window.navigator.vibrate([25]);
     }
   })
 
@@ -255,7 +255,7 @@ createVector.prototype.createEvents = function(){
       dist_2 = distpoints(tempArray[tempArray.length-1].targetTouches[0].pageX, tempArray[tempArray.length-1].targetTouches[0].pageY, tempArray[tempArray.length-1].targetTouches[1].pageX, tempArray[tempArray.length-1].targetTouches[1].pageY);
       temp_speed = (dist_1-dist_2)/(tempArray[0].timeStamp-tempArray[tempArray.length-1].timeStamp);
       if(temp_speed > 0.4 && !temp_resolved && d.resolution_allowed){
-        // window.navigator.vibrate(200);
+        // // window.navigator.vibrate(200);
         d.resolve_vector();
         temp_resolved = true;
       }
