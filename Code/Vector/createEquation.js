@@ -3,9 +3,9 @@
 
 createVector.prototype.create_equation = function(){
   var symbol = this.symbol;
-  this.div = d3.select('body').append('div').styles({ 'font-size': '1.5em' });
-  this.xEquation = this.div.append('text').html('\\( ' +symbol+ '_x = ' +symbol+ '_r*cos( ' +symbol+ '_\\theta ) \\)' + '<br>');
-  this.yEquation = this.div.append('text').html('\\( ' +symbol+ '_y = ' +symbol+ '_r*sin( ' +symbol+ '_\\theta ) \\)');
+  this.div = d3.select('body').append('div').styles({ 'font-size': this.font_size_normal });
+  this.xEquation = this.div.append('div').styles({ 'padding-top': 10 }).append('text').html('\\( ' +this.symbol+ '_x = ' +Math.round(radius_scale(this.r))+ 'cos( ' +Math.round(this.angle_deg)+'\u00B0'+ ' ) \\)' + '<br>');
+  this.yEquation = this.div.append('div').styles({ 'padding-top': 10 }).append('text').html('\\( ' +this.symbol+ '_y = ' +Math.round(radius_scale(this.r))+ 'sin( ' +Math.round(this.angle_deg)+'\u00B0'+ ' ) \\)');
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 
