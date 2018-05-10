@@ -103,18 +103,32 @@ d3.select(window).on("contextmenu", function(){
 // d3.select("body").append("audio")
 //   .attrs({ src: "../../Sound/beep_4.wav", autostart: false, id: "beep" });
 
-swal({
-  title: 'Welcome to our vector system!',
-  html: 'Click on the help icon to visit an instructional video.',
-  // text: 'Welcome to our vector system!',
-  showCloseButton: true,
-  showCancelButton: true,
-  confirmButtonText: 'Cool',
-  cancelButtonText: '<a onclick=intro()><i class="fa fa-question-circle" aria-hidden="true"></i> Intro</a>',
-  // footer: '<i class="fa fa-thumbs-up"></i> Great!'
-}).then((result) => {
-  if(navigator.vibrate){ navigator.vibrate([50]); };
-})
+function is_touch_device() {
+ return (('ontouchstart' in window)
+      || (navigator.MaxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0));
+}
+
+if(is_touch_device()){
+  swal({
+    title: 'Welcome to our vector system!',
+    html: 'Click on the help icon to visit an instructional video.',
+    // text: 'Welcome to our vector system!',
+    showCloseButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Cool',
+    cancelButtonText: '<a onclick=intro()><i class="fa fa-question-circle" aria-hidden="true"></i> Intro</a>',
+    // footer: '<i class="fa fa-thumbs-up"></i> Great!'
+  }).then((result) => {
+    if(navigator.vibrate){ navigator.vibrate([50]); };
+  })
+}
+else{
+  swal({
+    title: 'Oops!',
+    html: 'This system requires a touch screen.'
+  })
+}
 
 function intro(){
   window.open("https://youtu.be/RR1WX6o5hfM", "_default");
