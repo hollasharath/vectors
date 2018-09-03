@@ -61,12 +61,18 @@ createVector.prototype.addVectors = function(){
   object.setup_Addition_View(object.vector_1, object.vector_2, object.resultant);
   object.create_Addition_Events(object.vector_1, object.vector_2, object.resultant);
 
+  object.font_size_normal = 1.85*screen_size;
+  object.font_size_small = 1.7*screen_size;
+
   var symbol_1 = object.vector_1.symbol, symbol_2 = object.vector_2.symbol, symbol_r = object.resultant.symbol;
-  object.div = d3.select('body').append('div').styles({ 'position': 'absolute', 'font-size': '100%' });
-  object.div.styles({ 'display': 'none' });
-  object.div.append('text').html('\\( ' +symbol_r+ '_x = ' +symbol_1+ '_x + ' +symbol_2+ '_x \\)' + '<br>');
-  object.div.append('text').html('\\( ' +symbol_r+ '_y = ' +symbol_1+ '_y + ' +symbol_2+ '_y \\)');
+  object.div = d3.select('body').append('div').styles({ 'font-size': object.font_size_normal, 'position': 'absolute' });
+  object.div.append('text').html('\\( ' +symbol_r+ '_x = ' +symbol_1+ '_x + ' +symbol_2+ '_x \\)' + '<br>').styles({ 'font-size': object.font_size_normal });
+  object.div.append('text').html('\\( ' +symbol_r+ '_y = ' +symbol_1+ '_y + ' +symbol_2+ '_y \\)').styles({ 'font-size': object.font_size_normal });
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  setTimeout(() => {
+    object.div.styles({ 'display': 'none' });
+  }, 2000);
+
 }
 
 /*************************** update Added vectors  ***************************/
