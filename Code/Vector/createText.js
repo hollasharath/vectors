@@ -8,17 +8,17 @@ createVector.prototype.create_text = function(){
   this.text_3 = {};
   this.text_3.data = {
     posX: 0, posY: -this.r - 1.5*this.font_size_normal,
-    textBox: { "fill": this.vector_color, "fill-opacity": 0.1, width: 6.5*this.font_size_normal, height: 1.8*this.font_size_normal },
+    textBox: { "fill": this.vector_color, "fill-opacity": 0.1, width: 8*this.font_size_normal, height: 1.8*this.font_size_normal },
     tspans: [
       { index: 0, "value": this.symbol, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 1, "value": "x", "dominant-baseline": "mathematical", "font-size": this.font_size_small, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 2, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
-      { index: 3, "value": Math.round(radius_scale(this.r*Math.cos(this.angle_rad))), "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
+      { index: 3, "value": Math.round(radius_scale(this.r*Math.cos(this.angle_rad))*10)/10, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
       { index: 4, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
       { index: 5, "value": this.symbol, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 6, "value": "y", "dominant-baseline": "mathematical", "font-size": this.font_size_small, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 7, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
-      { index: 8, "value": Math.round(radius_scale(this.r*Math.sin(this.angle_rad))), "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
+      { index: 8, "value": Math.round(radius_scale(this.r*Math.sin(this.angle_rad))*10)/10, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
     ]
   }
 
@@ -33,17 +33,17 @@ createVector.prototype.create_text = function(){
   this.text_2 = {};
   this.text_2.data = {
     posX: 0, posY: -this.r - 1.5*this.font_size_normal,
-    textBox: { "fill": this.vector_color, "fill-opacity": 0.1, width: 6.5*this.font_size_normal, height: 1.8*this.font_size_normal },
+    textBox: { "fill": this.vector_color, "fill-opacity": 0.1, width: 8*this.font_size_normal, height: 1.8*this.font_size_normal },
     tspans: [
       { index: 0, "value": this.symbol, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 1, "value": "r", "dominant-baseline": "mathematical", "font-size": this.font_size_small, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 2, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
-      { index: 3, "value": Math.round(radius_scale(this.r)), "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
+      { index: 3, "value": Math.round(radius_scale(this.r)*10)/10, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
       { index: 4, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
       { index: 5, "value": this.symbol, "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 6, "value": "θ", "dominant-baseline": "mathematical", "font-size": this.font_size_small, "fill": this.vector_color, "font-family": "sans-serif" },
       { index: 7, "value": " ", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
-      { index: 8, "value": Math.round(this.angle_deg)+"\u00B0", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
+      { index: 8, "value": Math.round(this.angle_deg*10)/10+"\u00B0", "dominant-baseline": "middle", "font-size": this.font_size_normal, "fill": "black", "font-family": "sans-serif" },
     ]
   }
 
@@ -123,10 +123,10 @@ createVector.prototype.setup_text = function(){
 
 createVector.prototype.update_text = function(){
 
-  this.text_2.data.tspans[3].value = Math.round(radius_scale(this.r));
-  this.text_2.data.tspans[8].value = Math.round(this.angle_deg)+"\u00B0";
-  this.text_3.data.tspans[3].value = Math.round(radius_scale(this.r*Math.cos(this.angle_rad)));
-  this.text_3.data.tspans[8].value = Math.round(radius_scale(this.r*Math.sin(this.angle_rad)));
+  this.text_2.data.tspans[3].value = Math.round(radius_scale(this.r)*10)/10;
+  this.text_2.data.tspans[8].value = Math.round(this.angle_deg*10)/10+"\u00B0";
+  this.text_3.data.tspans[3].value = Math.round(radius_scale(this.r*Math.cos(this.angle_rad))*10)/10;
+  this.text_3.data.tspans[8].value = Math.round(radius_scale(this.r*Math.sin(this.angle_rad))*10)/10;
 
   if(this.vector_mode == "polar"){
     this.text_1.data.posY = -this.r - 1.5*this.font_size_normal;
