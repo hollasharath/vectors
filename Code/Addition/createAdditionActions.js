@@ -173,7 +173,7 @@ var resolve_added_vector = function(){
   // if(navigator.vibrate){ navigator.vibrate([50]); }
 
   setTimeout(() => {
-    this.div.styles({ 'display': null });
+    this.div.styles({ 'display': none });
   }, 2000);
 
   this.componentized = true;
