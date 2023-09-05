@@ -15,7 +15,7 @@ function createVector(data){
   this.addition_possible = false;
   this.addition_data = {};
   this.addedVectors = data.addedVectors;
-
+  screen_svg.vector_log[data.vectorID] = this;
   if(this.delete_allowed == undefined){ this.delete_allowed = true; }
   if(this.addition_resolution_allowed == undefined){ this.addition_resolution_allowed = true; }
   if(this.addition_change_mode_allowed == undefined){ this.addition_change_mode_allowed = true; }

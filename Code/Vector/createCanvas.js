@@ -8,6 +8,7 @@ function createCanvas(element) {
   var outer_div = element.append("div").styles({ "width": element_width, "height": element_height });
   screen_svg = {};
   screen_svg.canvas = outer_div.append("svg").styles({ "width": "100%", "height": "100%" });
+  screen_svg.vector_log = [];
   screen_svg.vector_list = [];
   screen_svg.vectorID = -1;
   screen_svg.settings = { show_decimals: false };
@@ -58,8 +59,8 @@ function createCanvas(element) {
       confirmButtonText: 'Done',
     }).then((result) => {
       screen_svg.settings.show_decimals = document.getElementById('settings_show_decimals').checked
-      screen_svg.vector_list.forEach(function (vector) {
-        vector.update();
+      screen_svg.vector_log.forEach(function (vector) {
+        if(vector) vector.update();
       })
     })
   })
@@ -128,7 +129,6 @@ function createCanvasEvents() {
       if (touch_1.target.nodeName == "svg" && touch_2.target.nodeName == "svg") {
 
         screen_svg.vectorID++;
-        console.log(screen_svg.vectorID)
         var temp_vector = new createVector({
           parent: screen_svg,
           cx: touch_1.pageX,
