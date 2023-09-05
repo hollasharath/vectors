@@ -122,11 +122,10 @@ createVector.prototype.setup_text = function(){
 // Update text
 
 createVector.prototype.update_text = function(){
-
-  this.text_2.data.tspans[3].value = Math.round(radius_scale(this.r)*10)/10;
-  this.text_2.data.tspans[8].value = Math.round(this.angle_deg*10)/10+"\u00B0";
-  this.text_3.data.tspans[3].value = Math.round(radius_scale(this.r*Math.cos(this.angle_rad))*10)/10;
-  this.text_3.data.tspans[8].value = Math.round(radius_scale(this.r*Math.sin(this.angle_rad))*10)/10;
+  this.text_2.data.tspans[3].value = this.parent.settings.show_decimals == true ? Math.round(radius_scale(this.r)*10)/10 : Math.round(radius_scale(this.r));
+  this.text_2.data.tspans[8].value = (this.parent.settings.show_decimals == true ? Math.round(this.angle_deg*10)/10 : Math.round(this.angle_deg))+"\u00B0";
+  this.text_3.data.tspans[3].value = this.parent.settings.show_decimals == true ? Math.round(radius_scale(this.r*Math.cos(this.angle_rad))*10)/10 : Math.round(radius_scale(this.r*Math.cos(this.angle_rad)));
+  this.text_3.data.tspans[8].value = this.parent.settings.show_decimals == true ? Math.round(radius_scale(this.r*Math.sin(this.angle_rad))*10)/10 : Math.round(radius_scale(this.r*Math.sin(this.angle_rad)));
 
   if(this.vector_mode == "polar"){
     this.text_1.data.posY = -this.r - 1.5*this.font_size_normal;
